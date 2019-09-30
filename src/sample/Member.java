@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Member {
@@ -7,13 +8,14 @@ public class Member {
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty lastName;
     private final SimpleStringProperty PN;
+    private final SimpleIntegerProperty ID;
 
 
    public Member(String fName, String lName, String PN, Integer UserID) {
         this.firstName = new SimpleStringProperty(fName);
         this.lastName = new SimpleStringProperty(lName);
         this.PN = new SimpleStringProperty(PN);
-
+        this.ID =new SimpleIntegerProperty(UserID);
 
     }
 
@@ -39,5 +41,13 @@ public class Member {
 
     public void setPN(String PersonalN) {
         PN.set(PersonalN);
+    }
+
+    public Integer getID() {
+        return ID.get();
+    }
+
+    public void setID(Integer userID) {
+        ID.set(userID);
     }
 }

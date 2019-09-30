@@ -24,7 +24,8 @@ public class Main extends Application {
             FXCollections.observableArrayList(
                     new  Member("Leonardo", "Pedro", "991112-9541",1),
                     new  Member("Loic", "Galland", "981202-3592",2),
-                    new  Member("Anas", "Kwefati", "923202-3532",3)
+                    new  Member("Anas", "Kwefati", "923202-3532",3),
+                    new  Member("Donald", "Legend", "963242-2232",4)
             );
 
     public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         Scene scene = new Scene(new Group());
-        stage.setTitle("Table View Sample");
+        stage.setTitle("Dashboard");
         stage.setWidth(450);
         stage.setHeight(500);
 
@@ -57,10 +58,23 @@ public class Main extends Application {
                 new PropertyValueFactory<Member, String>("PN"));
 
 
+        TableColumn IDCol = new TableColumn("User ID");
+        IDCol.setMinWidth(100);
+     IDCol.setCellValueFactory(
+                new PropertyValueFactory<Member, String>("ID"));
+
+
+
+
+
+
+
+
+
 
 
         table.setItems(MemberList);
-        table.getColumns().addAll(firstNameCol, lastNameCol, PNCol);
+        table.getColumns().addAll(firstNameCol, lastNameCol, PNCol,IDCol);
 
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
